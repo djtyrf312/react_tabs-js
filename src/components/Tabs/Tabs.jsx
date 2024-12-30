@@ -50,7 +50,10 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
           );
         </div>
 
-        <div className="block" data-cy="TabContent">
+        <div
+          className="block"
+          data-cy="TabContent"
+        >
           {tabContent}
         </div>
       </div>
