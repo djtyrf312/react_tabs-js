@@ -3,10 +3,10 @@ import classNames from 'classnames';
 
 export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
   let defaultTab = tabs[0];
-  const isActiveTabExist = tabs.some(tab => tab.id === activeTabId);
+  const activeTab = tabs.find(({ id }) => id === activeTabId);
 
-  if (isActiveTabExist) {
-    defaultTab = tabs.find(tab => tab.id === activeTabId);
+  if (activeTab) {
+    defaultTab = activeTab;
   }
 
   const defaultActiveTabId = defaultTab.id;
@@ -50,10 +50,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
           );
         </div>
 
-        <div
-          className="block"
-          data-cy="TabContent"
-        >
+        <div className="block" data-cy="TabContent">
           {tabContent}
         </div>
       </div>
