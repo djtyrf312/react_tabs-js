@@ -9,7 +9,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
     defaultTab = activeTab;
   }
 
-  const defaultActiveTabId = defaultTab.id;
+  const activatedTabId = defaultTab.id;
   const tabTitle = defaultTab.title;
   const tabContent = defaultTab.content;
 
@@ -24,7 +24,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
               <li
                 key={id}
                 className={classNames({
-                  'is-active': id === defaultActiveTabId,
+                  'is-active': id === activatedTabId,
                 })}
                 data-cy="Tab"
               >
